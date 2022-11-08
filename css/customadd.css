@@ -1,0 +1,42 @@
+html{
+    font-size: 14px;
+}
+@media(min-width: 768px){
+    html{
+        font-size: 16px;
+    }
+}
+.footer-section{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #5a5a5a;
+}
+table td{
+    text-align: center;
+    padding: 40px;
+    padding-left: 250px;
+    
+}
+button{
+    background-color: skyblue;
+    padding: 12px;
+    text-transform: uppercase;
+    margin-left: 390px;
+    
+    
+}
+form{
+     text-align: center;
+    padding: 12px;
+    text-transform: uppercase;
+    margin-left: 10px;
+}
+.container {
+  font-family: arial;
+  font-size: 24px;
+  }
+
+p {
+  /* Center horizontally*/
+  text-align: center;
+}

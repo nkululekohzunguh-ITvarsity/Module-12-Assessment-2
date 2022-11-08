@@ -1,0 +1,43 @@
+html{
+    font-size: 14px;
+}
+@media(min-width: 768px){
+    html{
+        font-size: 16px;
+    }
+}
+.footer-section{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #5a5a5a;
+}
+table td{
+    text-align: center;
+    padding: 40px;
+    padding-left: 250px;
+    
+}
+button{
+    background-color: green;
+    text-align: center;
+    padding: 30px;
+    text-transform: uppercase;
+    margin-left: 350px;
+    
+}
+form{
+     text-align: center;
+    padding: 30px;
+    text-transform: uppercase;
+    margin-left: 350px;
+}
+text{
+      text-align: center;
+    padding: 30px;
+    text-transform: uppercase;
+    margin-left: 350px;
+}
+.container {
+  font-family: arial;
+  font-size: 24px;
+  }

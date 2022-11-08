@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <title>Contact Book Plus</title>
+  
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/customadd.css">
+    </head>
+    
+           <!-------------------- main -------------------->
+    <main>
+            <div id="carouselImg" class="carousel slide carouselImg" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselImg" data-slide-to="0"></li>
+                    <li data-target="#carouselImg" data-slide-to="1"></li>
+                    <li data-target="#carouselImg" data-slide-to="2"></li>
+                <li data-target="#carouselImg" data-slide-to="3"></li>
+                <li data-target="#carouselImg" data-slide-to="4"></li>
+                <li data-target="#carouselImg" data-slide-to="5"></li>
+                </ol>
+                
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/forest.jpg" class="d-block w-100" />
+                        <div class="carousel-caption">
+                            <h1>Add Contact.</h1>
+                            <p>Add Contacts, Edit Contacts, View Contacts, Delete Contacts...</p>
+                        </div>
+                    </div>
+                </div></div></main>
+    
+    <body>
+        
+    <br/>
+        <form id="editForm">
+            <label for="firstname">First name</label><br/>
+            <input type="text" name="firstname" id="firstname"><br/>
+            <label for="lastname">Last name</label><br/>
+            <input type="text" name="lastname" id="lastname"><br/>
+            <label for="mobile">Mobile</label><br/>
+            <input type="text" name="mobile" id="mobile"><br/>
+            <label for="email">Email</label><br/>
+            <input type="text" name="email" id="email"><br/>
+            <label for="avatar">Select a file</label><br/>
+            <input type="file" name="avatar" id="avatar"><br/>
+            
+            </form>
+        
+          <button id="homeLink" type="button">Home</button>
+        <button type="submit" id="submitForm">Submit</button>
+      
+        
+        <script src="config.js"></script>
+            <script src="js/jquery-3.6.1.min.js"></script>   
+    <script src="js/bootstrap.bundle.min.js"></script>
+        
+        <script>
+            
+            document.getElementById("submitForm").addEventListener('click', submitForm);
+            document.getElementById("homeLink").addEventListener('click' , homeLink);
+            
+        function submitForm(e){
+            e.preventDefault();
+            
+            const form = new FormData(document.querySelector('#editForm'));
+            form.append('apiKey' , apiKey);
+            
+            fetch(rootPath + 'controller/insert-contact/', {
+                method: 'POST',
+                headers: {'Accept': 'application/json, *.*'},
+                body: form
+            })
+            .then (function(response){
+                return response.text();
+            })
+            .then(function(data){
+                if(data == "1"){
+                    alert("contact added.");
+                    homeLink();
+                }else{
+                    alert(data);
+                    homeLink();
+                }
+            })
+        }
+            function homeLink(){
+                window.open("index.html", "_self");
+                
+            }
+        </script>
+         <hr class="section-divider"/>
+            
+            <footer class="container footer-section">
+                <p class="float-right"><a href="#">Back to top</a></p>
+                <p>&copy; 2017-2019 Company, Inc, @copyright Designed by Nkululeko Zungu &middot; <a href="#">Privacy</a> &middot; <a href="#"></a></p>     
+            </footer> 
+    </body> 
+</html>
